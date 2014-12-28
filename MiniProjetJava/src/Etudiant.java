@@ -7,12 +7,35 @@ public class Etudiant extends Utilisateur {
   private Note note;
   private Action action;
 	
-  public Etudiant () {
-	this.setClassement(0);
-	this.setAction(new Consulter());
+  public Etudiant ( String nom, String pr, Note n)
+  {
+	  super(nom,pr);
+	  this.setAction(new Consulter(this));
+	  this.note=n;
+	  this.setClassement(0);
   }
   
-  public void setNote(Note note) {
+  public Etudiant ( String nom, String pr)
+  {
+	  super(nom,pr);
+	  this.setAction(new Consulter(this));
+	  this.setClassement(0);
+  }  
+  
+  public Etudiant () {
+	this.setClassement(0);
+	this.note=new Note(0,"NP");
+	this.setAction(new Consulter(this));
+  }
+  
+  @Override
+public String toString() {
+	return "Etudiant [classement=" + classement + ", note=" + note.getValeur()+"/"+note.getCommentaire()
+			+ ", Nom=" + this.getNom()
+			+ ", Prenom=" +this.getPrenom() + "]";
+}
+
+public void setNote(Note note) {
 	this.note = note;
 }
 

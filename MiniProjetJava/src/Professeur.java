@@ -1,25 +1,35 @@
-
+import java.util.ArrayList;
 
 public class Professeur extends Utilisateur {
 
 	private int nbEtud;
-	private Etudiant[] listeEtud;
+	private ArrayList<Etudiant> listeEtud;
 	private Matiere matiere;
 	private Action action;
 
-	public Etudiant[] getListeEtud() {
+	public ArrayList getListeEtud() {
 		return listeEtud;
 	}
 
-	public void setListeEtud(Etudiant[] listeEtud) {
+	public void setListeEtud(ArrayList listeEtud) {
 		this.listeEtud = listeEtud;
 	}
+	
+	public Professeur (String n, String p)
+	{
+		this.setNom(n);
+		this.setPrenom(p);
+		this.listeEtud=new ArrayList();
+		this.setAction(new Editer(this));
+	}
 
-	public Professeur (int nbEt, String m){
-		this.matiere.setNomMat(m);
+	public Professeur (int nbEt,String nom, String pr, String m){
+		//this.matiere.setNomMat(m);
+		
 		this.setNbEtud(nbEt);
-		this.listeEtud = new Etudiant[nbEtud];
-		this.setAction(new Editer());
+		this.listeEtud=new ArrayList();
+		//this.listeEtud = new Etudiant[nbEtud];
+		this.setAction(new Editer(this));
 	}
 	
 	public void setNbEtud(int nbEtud) {

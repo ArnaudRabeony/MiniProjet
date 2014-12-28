@@ -1,5 +1,11 @@
 
-public interface Action 
+public abstract class Action 
 {
-	public void agir();
+	protected Utilisateur u;
+
+	public Action(Utilisateur u){
+		this.u=u;
+	}
+	 
+	public abstract void agir();
 }

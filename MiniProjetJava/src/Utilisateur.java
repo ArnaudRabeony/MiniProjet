@@ -2,15 +2,17 @@
 public class Utilisateur {
 
   private Action ac;
-  private int id;
   private String nom;
   private String prenom;
   
-  public Utilisateur () { };
-  
-  public int getId () {
-    return id;
+  public Utilisateur (String n, String p)
+  {
+	  this.setNom(n);
+	  this.setPrenom(p);
+	  this.ac=ac;
   }
+  
+  public Utilisateur(){}
   
   public void setNom(String n)
   {

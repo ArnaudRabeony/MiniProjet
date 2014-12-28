@@ -8,7 +8,18 @@ public class Note {
   
   public Note () { };
 
-  public void setValeur (int newVar) {
+  public Note(int v, String c)
+  {
+	  this.setCommentaire(c);
+	  this.setValeur(v);
+  }
+  
+  @Override
+public String toString() {
+	return "Note [valeur=" + valeur + ", Commentaire=" + Commentaire + "]";
+}
+
+public void setValeur (int newVar) {
     valeur = newVar;
   }
 

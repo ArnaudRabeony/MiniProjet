@@ -56,31 +56,89 @@ public class Professeur extends Utilisateur {
 	    	System.out.println("\n\nEditer note de tous les étudiants");
 	    	
 	    	//int i=0;
-		    	for(Object e : this.getListeEtud())
+		    	for(Etudiant e : this.listeEtud)
 		    	{
 		    		//System.out.println("test"+i);
 		    		//i=i+1;
-		    		((Editer)this.action).noter((Etudiant)e);
+		    		{
+		    	    	
+		    	    	System.out.print("\nSaisir note de "+e.getPrenom()+""+e.getNom()+" : ");
+		    	    	Note n = new Note();
+		    	    	n.setValeur(sc.nextInt());
+		    	       	System.out.println("\nCommenter note de "+e.getPrenom()+""+e.getNom()+" ?\n1 - oui\n2 - non");
+		    	    	
+		    	    	int v=sc.nextInt();
+		    	    	
+		    	    	switch(v)
+		    	    	{
+
+		    	    	case 1 :
+		    	        	System.out.println(" Saisir commentaire : ");
+		    	        	String s = sc.nextLine();
+		    	        	n.setCommentaire(sc.nextLine());
+		    	        	System.out.println("MAJ Commentaire");
+		    	        break;
+		    	        
+		    	    	case 2 :
+		    	    		n.setCommentaire("No comment");
+		    	        	System.out.println("\t Fin édition");
+		    	        break;
+		    	        
+		    	        default :
+		    	    		n.setCommentaire("NP");
+		    	        	System.out.println("Choix invalide");
+		    	        break;
+		    	    	}
+		    	    	e.setNote(n);
+		    	    }
 		    	}
 		    	
 		   System.out.println("\nRécapitulatif carnet de notes");
-			for(Object e : this.getListeEtud())
+			for(Etudiant e : this.listeEtud)
 	    	{
-				System.out.println(((Etudiant)e).getNom()+((Etudiant)e).getPrenom() + " : "+ ((Etudiant)e).getNote() );
+				System.out.println(e.getNom()+e.getPrenom() + " : "+ e.getNote() );
 	    	}
 		break;
 		
 		case 2 :
 			
 			System.out.println("\n* * * * * * * * * * * * Liste des étudiants * * * * * * * * * * *\n\n");
-			for( Object o : this.getListeEtud())
+			for( Etudiant e : this.listeEtud)
 			{	
-				System.out.print(((Etudiant)o).getNom()+((Etudiant)o).getPrenom());
+				System.out.print(e.getNom()+e.getPrenom());
 				System.out.println(" : Editer note ?\n\t\t1 - Oui\n\t\t2 - Non");
 				int s=sc.nextInt();
 				if(s==1)
 				{
-					((Editer)this.action).noter(((Etudiant)o));
+					{				    	
+				    	System.out.print("\nSaisir note de "+e.getPrenom()+""+e.getNom()+" : ");
+				    	Note n = new Note();
+				    	n.setValeur(sc.nextInt());
+				       	System.out.println("\nCommenter note de "+e.getPrenom()+""+e.getNom()+" ?\n1 - oui\n2 - non");
+				    	
+				    	int v=sc.nextInt();
+				    	
+				    	switch(v)
+				    	{
+
+				    	case 1 :
+				        	System.out.println(" Saisir commentaire : ");
+				        	n.setCommentaire(sc.nextLine());
+				        	System.out.println("MAJ Commentaire");
+				        break;
+				        
+				    	case 2 :
+				    		n.setCommentaire("No comment");
+				        	System.out.println("\t Fin édition");
+				        break;
+				        
+				        default :
+				    		n.setCommentaire("NP");
+				        	System.out.println("Choix invalide");
+				        break;
+				    	}
+				    	e.setNote(n);
+				    }
 				}
 			}		
 		break;

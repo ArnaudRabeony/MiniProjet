@@ -73,7 +73,7 @@ public Note getNote() {
 		this.action = action;
 	}
   
-  public void agir(ArrayList<Etudiant> etud)
+  public void agir()
   {
 	  System.out.println("\t* * * * * * * * * * Etudiant : "+this.getNom() +" "+this.getPrenom()+" * * * * * * * * *\n");
 	  System.out.println("Classement : "+this.getClassement());

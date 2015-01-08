@@ -10,6 +10,5 @@ public class TestProfNotes {
 		System.out.println(e);
 		e.getAction().agir();
 		//System.out.println(e);
-		
 	}
 }

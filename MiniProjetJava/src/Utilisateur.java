@@ -1,5 +1,5 @@
 
-public class Utilisateur {
+public class Utilisateur implements Action {
 
   private Action ac;
   private String nom;

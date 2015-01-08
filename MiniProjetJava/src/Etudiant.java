@@ -1,7 +1,7 @@
 
 import java.util.*;
 
-public class Etudiant extends Utilisateur {
+public class Etudiant extends Utilisateur implements Action, java.lang.Comparable{
 
   private int classement;
   private Note note;
@@ -10,7 +10,7 @@ public class Etudiant extends Utilisateur {
   public Etudiant ( String nom, String pr, Note n)
   {
 	  super(nom,pr);
-	  this.setAction(new Consulter(this));
+	  this.action= new Consulter();
 	  this.note=n;
 	  this.setClassement(0);
   }
@@ -18,15 +18,29 @@ public class Etudiant extends Utilisateur {
   public Etudiant ( String nom, String pr)
   {
 	  super(nom,pr);
-	  this.setAction(new Consulter(this));
+	  this.action= new Consulter();
 	  this.setClassement(0);
   }  
   
   public Etudiant () {
 	this.setClassement(0);
 	this.note=new Note(0,"NP");
-	this.setAction(new Consulter(this));
+	this.action= new Consulter();
   }
+  
+  public void classement(ArrayList<Etudiant> etud)
+  {
+		Collections.sort(etud); 
+		this.setClassement(etud.indexOf(this));
+  }
+  
+  public int compareTo(Object other) { 
+      int nombre1 = ((Etudiant) other).getNote().getValeur(); 
+      int nombre2 = this.getNote().getValeur();
+      if (nombre1 > nombre2)  return -1; 
+      else if(nombre1 == nombre2) return 0; 
+      else return 1; 
+ }
   
   @Override
 public String toString() {
@@ -58,4 +72,11 @@ public Note getNote() {
   public void setAction(Action action) {
 		this.action = action;
 	}
+  
+  public void agir(ArrayList<Etudiant> etud)
+  {
+	  System.out.println("\t* * * * * * * * * * Etudiant : "+this.getNom() +" "+this.getPrenom()+" * * * * * * * * *\n");
+	  System.out.println("Classement : "+this.getClassement());
+	  System.out.println("Note : "+this.getNote().toString());
+  }
 }

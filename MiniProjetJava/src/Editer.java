@@ -1,31 +1,10 @@
 import java.util.Scanner;
 
-public class Editer extends Action {
+public class Editer implements Action {
 	
-    public Editer(Utilisateur u)
-    {
-  	  super(u);
-    }
+    public Editer(){}
     
-    public void agir()
-    {
-  	  	System.out.println("\t* * * * * * * * * * Professeur : "+((Professeur)u).getNom() +" "+((Professeur)u).getPrenom()+" * * * * * * * * *\n");
-    	System.out.println("\n\nEditer note de tous les étudiants");
-    	
-    	//int i=0;
-	    	for(Object e : ((Professeur)u).getListeEtud())
-	    	{
-	    		//System.out.println("test"+i);
-	    		//i=i+1;
-	    		this.noter((Etudiant)e);
-	    	}
-	    	
-	   System.out.println("\nRécapitulatif carnet de notes");
-		for(Object e : ((Professeur)u).getListeEtud())
-    	{
-			System.out.println(((Etudiant)e).getNom()+((Etudiant)e).getPrenom() + " : "+ ((Etudiant)e).getNote() );
-    	}
-    }
+    public void agir(){}
     
     public void noter(Etudiant e)
     {
@@ -58,7 +37,6 @@ public class Editer extends Action {
         	System.out.println("Choix invalide");
         break;
     	}
-    	
     	e.setNote(n);
     }
 }

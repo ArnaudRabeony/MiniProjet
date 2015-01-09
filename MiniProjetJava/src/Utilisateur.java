@@ -1,5 +1,7 @@
-
-public class Utilisateur implements Action {
+/*
+ *NOUVEAU 
+ */
+public class Utilisateur{
 
   private Action ac;
   private String nom;
@@ -9,12 +11,27 @@ public class Utilisateur implements Action {
   {
 	  this.setNom(n);
 	  this.setPrenom(p);
+  }
+
+  
+  public Utilisateur (String n, String p, Action ac)
+  {
+	  this.setNom(n);
+	  this.setPrenom(p);
 	  this.ac=ac;
   }
   
   public Utilisateur(){}
   
-  public void setNom(String n)
+  public Action getAc() {
+	return ac;
+}
+
+public void setAc(Action ac) {
+	this.ac = ac;
+}
+
+public void setNom(String n)
   {
 	  this.nom=n;
   }
@@ -34,5 +51,4 @@ public class Utilisateur implements Action {
 	  return this.prenom;
   }
   
-  public void agir(){}
 }

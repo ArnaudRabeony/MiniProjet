@@ -1,16 +1,19 @@
 
 import java.util.*;
 
-public class Etudiant extends Utilisateur implements Action, java.lang.Comparable{
+/*
+ * NOUVEAU
+ */
+
+public class Etudiant extends Utilisateur implements java.lang.Comparable{
 
   private int classement;
   private Note note;
-  private Action action;
 	
   public Etudiant ( String nom, String pr, Note n)
   {
 	  super(nom,pr);
-	  this.action= new Consulter();
+	  this.setAc(new Consulter(this));
 	  this.note=n;
 	  this.setClassement(0);
   }
@@ -18,14 +21,14 @@ public class Etudiant extends Utilisateur implements Action, java.lang.Comparabl
   public Etudiant ( String nom, String pr)
   {
 	  super(nom,pr);
-	  this.action= new Consulter();
+	  this.setAc(new Consulter(this));
 	  this.setClassement(0);
   }  
   
   public Etudiant () {
 	this.setClassement(0);
 	this.note=new Note(0,"NP");
-	this.action= new Consulter();
+	this.setAc(new Consulter(this));
   }
   
   public void classement(ArrayList<Etudiant> etud)
@@ -64,19 +67,5 @@ public Note getNote() {
   public void setClassement(int classement) {
 	this.classement = classement;
   }
-  
-  public Action getAction() {
-	return action;
-  }
-  
-  public void setAction(Action action) {
-		this.action = action;
-	}
-  
-  public void agir()
-  {
-	  System.out.println("\t* * * * * * * * * * Etudiant : "+this.getNom() +" "+this.getPrenom()+" * * * * * * * * *\n");
-	  System.out.println("Classement : "+this.getClassement());
-	  System.out.println("Note : "+this.getNote().toString());
-  }
+
 }

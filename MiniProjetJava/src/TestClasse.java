@@ -5,14 +5,15 @@ public class TestClasse {
 
 	public static void main(String[] args)
 	{
-		Classe c=new Classe();
+		Scanner sc=new Scanner(System.in);
+
+		Professeur p=new Professeur("Ghesmoune","Mohammed");
 		
 		boolean b=true;
 		do
 		{
-		c.choixUtilisateur();
-		System.out.println("\nPermettre Ã  un autre utilisateur d'utiliser l'outil de suivi de notes ?\n1 - Oui\n2 - Non");
-		Scanner sc=new Scanner(System.in);
+		p.getGrp().choixUtilisateur();
+		System.out.println("\nPermettre à un autre utilisateur d'utiliser l'outil de suivi de notes ?\n1 - Oui\n2 - Non");
 		int choix=sc.nextInt();
 		
 			if(choix==2)

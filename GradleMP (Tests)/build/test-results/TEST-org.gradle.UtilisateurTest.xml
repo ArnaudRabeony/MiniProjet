@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.gradle.UtilisateurTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-01-09T23:04:09" hostname="ranox-X550CC" time="0.001">
+  <properties/>
+  <testcase name="constructionUtilisateurDefaut" classname="org.gradle.UtilisateurTest" time="0.0"/>
+  <testcase name="constructionUtilisateurNomPrenom" classname="org.gradle.UtilisateurTest" time="0.0"/>
+  <testcase name="constructionUtilisateurNomPrenomAction" classname="org.gradle.UtilisateurTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

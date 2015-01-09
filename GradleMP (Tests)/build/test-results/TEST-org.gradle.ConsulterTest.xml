@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.gradle.ConsulterTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-01-09T23:04:09" hostname="ranox-X550CC" time="0.002">
+  <properties/>
+  <testcase name="consultationEtudiant" classname="org.gradle.ConsulterTest" time="0.002"/>
+  <system-out><![CDATA[	* * * * * * * * * * Etudiant : Larry Cross * * * * * * * * *
+
+Classement : 0
+Note : Note [valeur=12, Commentaire=Hooonnnn !]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

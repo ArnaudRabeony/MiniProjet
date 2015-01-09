@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.gradle.ProfesseurTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-01-09T23:04:09" hostname="ranox-X550CC" time="0.076">
+  <properties/>
+  <testcase name="constructionProfDefaut" classname="org.gradle.ProfesseurTest" time="0.007"/>
+  <testcase name="constructionProfAvecNomPrenom" classname="org.gradle.ProfesseurTest" time="0.068"/>
+  <system-out><![CDATA[
+
+* * * * * * * * * * * * * * *  Cr�ation de la classe  * * * * * * * * * * * * * * *
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

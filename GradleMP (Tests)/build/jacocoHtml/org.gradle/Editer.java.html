@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Editer.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GradleMP</a> &gt; <a href="index.source.html" class="el_package">org.gradle</a> &gt; <span class="el_source">Editer.java</span></div><h1>Editer.java</h1><pre class="source lang-java linenums">package org.gradle;
+import java.util.Scanner;
+
+/*
+ *NOUVEAU 
+ */
+
+public class Editer implements Action {
+	
+	public Utilisateur u;
+	
+<span class="fc" id="L12">    public Editer(Utilisateur u){</span>
+<span class="fc" id="L13">    	this.u = u;</span>
+<span class="fc" id="L14">    }</span>
+    
+	public Utilisateur getU() {
+<span class="fc" id="L17">		return u;</span>
+	}
+
+	public void setU(Utilisateur u) {
+<span class="nc" id="L21">		this.u = u;</span>
+<span class="nc" id="L22">	}</span>
+
+	public void agir()
+    {
+<span class="nc" id="L26">    	System.out.println(&quot; 1 - Editer toutes les notes\n 2 - Selectionner �l�ve parmi liste\n&quot;);</span>
+<span class="nc" id="L27">		Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L28">		int choix = sc.nextInt();</span>
+		
+<span class="nc bnc" id="L30" title="All 3 branches missed.">		switch(choix)</span>
+		{
+		case 1 :
+<span class="nc" id="L33">			System.out.println(&quot;\t* * * * * * * * * * Professeur : &quot;+this.u.getNom() +&quot; &quot;+this.u.getPrenom()+&quot; * * * * * * * * *\n&quot;);</span>
+<span class="nc" id="L34">	    	System.out.println(&quot;\n\nEditer note de tous les �tudiants&quot;);</span>
+	    	
+	    	//int i=0;
+<span class="nc bnc" id="L37" title="All 2 branches missed.">		    	for(Etudiant e : ((Professeur)this.u).getGrp().getEleves())</span>
+		    	{
+		    		//System.out.println(&quot;test&quot;+i);
+		    		//i=i+1;
+		    		{
+		    	    	
+<span class="nc" id="L43">		    	    	System.out.print(&quot;\nSaisir note de &quot;+e.getPrenom()+&quot; &quot;+e.getNom()+&quot; : &quot;);</span>
+<span class="nc" id="L44">		    	    	Note n = new Note();</span>
+<span class="nc" id="L45">		    	    	n.setValeur(sc.nextInt());</span>
+<span class="nc" id="L46">		    	       	System.out.println(&quot;\nCommenter note de &quot;+e.getPrenom()+&quot; &quot;+e.getNom()+&quot; ?\n1 - oui\n2 - non&quot;);</span>
+		    	    	
+<span class="nc" id="L48">		    	    	int v=sc.nextInt();</span>
+		    	    	
+<span class="nc bnc" id="L50" title="All 3 branches missed.">		    	    	switch(v)</span>
+		    	    	{
+
+		    	    	case 1 :
+<span class="nc" id="L54">		    	        	System.out.println(&quot; Saisir commentaire : &quot;);</span>
+<span class="nc" id="L55">		    	        	n.setCommentaire(sc.nextLine());</span>
+<span class="nc" id="L56">		    	        	System.out.println(&quot;MAJ Commentaire&quot;);</span>
+<span class="nc" id="L57">		    	        break;</span>
+		    	        
+		    	    	case 2 :
+<span class="nc" id="L60">		    	    		n.setCommentaire(&quot;No comment&quot;);</span>
+<span class="nc" id="L61">		    	        	System.out.println(&quot;\t Fin édition&quot;);</span>
+<span class="nc" id="L62">		    	        break;</span>
+		    	        
+		    	        default :
+<span class="nc" id="L65">		    	    		n.setCommentaire(&quot;NP&quot;);</span>
+<span class="nc" id="L66">		    	        	System.out.println(&quot;Choix invalide&quot;);</span>
+		    	        break;
+		    	    	}
+<span class="nc" id="L69">		    	    	e.setNote(n);</span>
+		    	    }
+<span class="nc" id="L71">		    	}</span>
+		    	
+<span class="nc" id="L73">		   System.out.println(&quot;\nR�capitulatif carnet de notes&quot;);</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">			for(Etudiant e : ((Professeur)this.u).getGrp().getEleves())</span>
+	    	{
+<span class="nc" id="L76">				System.out.println(e.getNom()+e.getPrenom() + &quot; : &quot;+ e.getNote() );</span>
+<span class="nc" id="L77">	    	}</span>
+<span class="nc" id="L78">		break;</span>
+		
+		case 2 :
+			
+<span class="nc" id="L82">			System.out.println(&quot;\n* * * * * * * * * * * * Liste des �tudiants * * * * * * * * * * *\n\n&quot;);</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">			for(Etudiant e : ((Professeur)this.u).getGrp().getEleves())</span>
+			{	
+<span class="nc" id="L85">				System.out.print(e.getNom()+e.getPrenom());</span>
+<span class="nc" id="L86">				System.out.println(&quot; : Editer note ?\n\t\t1 - Oui\n\t\t2 - Non&quot;);</span>
+<span class="nc" id="L87">				int s=sc.nextInt();</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">				if(s==1)</span>
+				{
+					{				    	
+<span class="nc" id="L91">				    	System.out.print(&quot;\nSaisir note de &quot;+e.getPrenom()+&quot;&quot;+e.getNom()+&quot; : &quot;);</span>
+<span class="nc" id="L92">				    	Note n = new Note();</span>
+<span class="nc" id="L93">				    	n.setValeur(sc.nextInt());</span>
+<span class="nc" id="L94">				       	System.out.println(&quot;\nCommenter note de &quot;+e.getPrenom()+&quot;&quot;+e.getNom()+&quot; ?\n1 - oui\n2 - non&quot;);</span>
+				    	
+<span class="nc" id="L96">				    	int v=sc.nextInt();</span>
+				    	
+<span class="nc bnc" id="L98" title="All 3 branches missed.">				    	switch(v)</span>
+				    	{
+
+				    	case 1 :
+<span class="nc" id="L102">				        	System.out.println(&quot; Saisir commentaire : &quot;);</span>
+<span class="nc" id="L103">				        	n.setCommentaire(sc.nextLine());</span>
+<span class="nc" id="L104">				        	System.out.println(&quot;MAJ Commentaire&quot;);</span>
+<span class="nc" id="L105">				        break;</span>
+				        
+				    	case 2 :
+<span class="nc" id="L108">				    		n.setCommentaire(&quot;No comment&quot;);</span>
+<span class="nc" id="L109">				        	System.out.println(&quot;\t Fin édition&quot;);</span>
+<span class="nc" id="L110">				        break;</span>
+				        
+				        default :
+<span class="nc" id="L113">				    		n.setCommentaire(&quot;NP&quot;);</span>
+<span class="nc" id="L114">				        	System.out.println(&quot;Choix invalide&quot;);</span>
+				        break;
+				    	}
+<span class="nc" id="L117">				    	e.setNote(n);</span>
+				    }
+				}
+<span class="nc" id="L120">			}		</span>
+		break;
+		
+		}
+	
+<span class="nc" id="L125">		sc.close();</span>
+		
+<span class="nc" id="L127">		((Professeur)this.u).getGrp().statistiques();</span>
+<span class="nc" id="L128">		System.out.println(&quot;\nNote minimale :&quot;+((Professeur)this.u).getGrp().getMin());</span>
+<span class="nc" id="L129">		System.out.println(&quot;\nNote maximale :&quot;+((Professeur)this.u).getGrp().getMax());</span>
+<span class="nc" id="L130">		System.out.println(&quot;\nMoyenne classe :&quot;+((Professeur)this.u).getGrp().getMoyenne());</span>
+<span class="nc" id="L131">    }				</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

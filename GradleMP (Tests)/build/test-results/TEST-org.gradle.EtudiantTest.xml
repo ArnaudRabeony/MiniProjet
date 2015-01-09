@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.gradle.EtudiantTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-01-09T23:04:09" hostname="ranox-X550CC" time="0.001">
+  <properties/>
+  <testcase name="constructionEtudiantDefaut" classname="org.gradle.EtudiantTest" time="0.0"/>
+  <testcase name="constructionEtudiantAvecNomPrenom" classname="org.gradle.EtudiantTest" time="0.0"/>
+  <testcase name="constructionEtudiantAvecNomPrenomNote" classname="org.gradle.EtudiantTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

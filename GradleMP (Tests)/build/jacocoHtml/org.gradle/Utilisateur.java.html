@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Utilisateur.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GradleMP</a> &gt; <a href="index.source.html" class="el_package">org.gradle</a> &gt; <span class="el_source">Utilisateur.java</span></div><h1>Utilisateur.java</h1><pre class="source lang-java linenums">package org.gradle;
+/*
+ *NOUVEAU 
+ */
+public class Utilisateur{
+
+  private Action ac;
+  private String nom;
+  private String prenom;
+  
+  public Utilisateur (String n, String p)
+<span class="fc" id="L12">  {</span>
+<span class="fc" id="L13">	  this.setNom(n);</span>
+<span class="fc" id="L14">	  this.setPrenom(p);</span>
+<span class="fc" id="L15">  }</span>
+
+  
+  public Utilisateur (String n, String p, Action ac)
+<span class="fc" id="L19">  {</span>
+<span class="fc" id="L20">	  this.setNom(n);</span>
+<span class="fc" id="L21">	  this.setPrenom(p);</span>
+<span class="fc" id="L22">	  this.ac=ac;</span>
+<span class="fc" id="L23">  }</span>
+  
+<span class="fc" id="L25">  public Utilisateur(){}</span>
+  
+  public Action getAc() {
+<span class="fc" id="L28">	return ac;</span>
+}
+
+public void setAc(Action ac) {
+<span class="fc" id="L32">	this.ac = ac;</span>
+<span class="fc" id="L33">}</span>
+
+public void setNom(String n)
+  {
+<span class="fc" id="L37">	  this.nom=n;</span>
+<span class="fc" id="L38">  }</span>
+  
+  public void setPrenom(String p)
+  {
+<span class="fc" id="L42">	  this.prenom=p;</span>
+<span class="fc" id="L43">  }</span>
+  
+  public String getNom()
+  {
+<span class="fc" id="L47">	  return this.nom;</span>
+  }
+  
+  public String getPrenom()
+  {
+<span class="fc" id="L52">	  return this.prenom;</span>
+  }
+  
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.0" sequence="0" timestamp="1420845612711" analysisTimestamp="1420845612732" release="">
+  <Project projectName="">
+    <Jar>/home/ranox/workspace/GradleMP/build/classes/main/org/gradle/Action.class</Jar>
+    <Jar>/home/ranox/workspace/GradleMP/build/classes/main/org/gradle/Professeur.class</Jar>
+    <Jar>/home/ranox/workspace/GradleMP/build/classes/main/org/gradle/Utilisateur.class</Jar>
+    <Jar>/home/ranox/workspace/GradleMP/build/classes/main/org/gradle/Consulter.class</Jar>
+    <Jar>/home/ranox/workspace/GradleMP/build/classes/main/org/gradle/Editer.class</Jar>
+    <Jar>/home/ranox/workspace/GradleMP/build/classes/main/org/gradle/Etudiant.class</Jar>
+    <Jar>/home/ranox/workspace/GradleMP/build/classes/main/org/gradle/Note.class</Jar>
+    <Jar>/home/ranox/workspace/GradleMP/build/classes/main/org/gradle/Groupe.class</Jar>
+    <AuxClasspathEntry>/home/ranox/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2/f951934aa5ae5a88d7e6dfaa6d32307d834a88be/commons-collections-3.2.jar</AuxClasspathEntry>
+    <SrcDir>/home/ranox/workspace/GradleMP/src/main/java/org/gradle/Groupe.java</SrcDir>
+    <SrcDir>/home/ranox/workspace/GradleMP/src/main/java/org/gradle/Utilisateur.java</SrcDir>
+    <SrcDir>/home/ranox/workspace/GradleMP/src/main/java/org/gradle/Professeur.java</SrcDir>
+    <SrcDir>/home/ranox/workspace/GradleMP/src/main/java/org/gradle/Note.java</SrcDir>
+    <SrcDir>/home/ranox/workspace/GradleMP/src/main/java/org/gradle/Action.java</SrcDir>
+    <SrcDir>/home/ranox/workspace/GradleMP/src/main/java/org/gradle/Consulter.java</SrcDir>
+    <SrcDir>/home/ranox/workspace/GradleMP/src/main/java/org/gradle/Editer.java</SrcDir>
+    <SrcDir>/home/ranox/workspace/GradleMP/src/main/java/org/gradle/Etudiant.java</SrcDir>
+  </Project>
+  <BugInstance type="BC_UNCONFIRMED_CAST" priority="3" rank="20" abbrev="BC" category="STYLE">
+    <Class classname="org.gradle.Consulter">
+      <SourceLine classname="org.gradle.Consulter" start="6" end="24" sourcefile="Consulter.java" sourcepath="org/gradle/Consulter.java"/>
+    </Class>
+    <Method classname="org.gradle.Consulter" name="agir" signature="()V" isStatic="false">
+      <SourceLine classname="org.gradle.Consulter" start="21" end="24" startBytecode="0" endBytecode="47" sourcefile="Consulter.java" sourcepath="org/gradle/Consulter.java"/>
+    </Method>
+    <Type descriptor="Lorg/gradle/Utilisateur;" role="TYPE_FOUND">
+      <SourceLine classname="org.gradle.Utilisateur" start="12" end="52" sourcefile="Utilisateur.java" sourcepath="org/gradle/Utilisateur.java"/>
+    </Type>
+    <Type descriptor="Lorg/gradle/Etudiant;" role="TYPE_EXPECTED">
+      <SourceLine classname="org.gradle.Etudiant" start="17" end="72" sourcefile="Etudiant.java" sourcepath="org/gradle/Etudiant.java"/>
+    </Type>
+    <Field classname="org.gradle.Consulter" name="u" signature="Lorg/gradle/Utilisateur;" isStatic="false" role="FIELD_VALUE_OF">
+      <SourceLine classname="org.gradle.Consulter" sourcefile="Consulter.java" sourcepath="org/gradle/Consulter.java"/>
+    </Field>
+    <SourceLine classname="org.gradle.Consulter" start="22" end="22" startBytecode="70" endBytecode="70" sourcefile="Consulter.java" sourcepath="org/gradle/Consulter.java"/>
+    <SourceLine classname="org.gradle.Consulter" start="23" end="23" startBytecode="104" endBytecode="104" sourcefile="Consulter.java" sourcepath="org/gradle/Consulter.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="BC_UNCONFIRMED_CAST" priority="3" rank="20" abbrev="BC" category="STYLE">
+    <Class classname="org.gradle.Editer">
+      <SourceLine classname="org.gradle.Editer" start="12" end="131" sourcefile="Editer.java" sourcepath="org/gradle/Editer.java"/>
+    </Class>
+    <Method classname="org.gradle.Editer" name="agir" signature="()V" isStatic="false">
+      <SourceLine classname="org.gradle.Editer" start="26" end="131" startBytecode="0" endBytecode="327" sourcefile="Editer.java" sourcepath="org/gradle/Editer.java"/>
+    </Method>
+    <Type descriptor="Lorg/gradle/Utilisateur;" role="TYPE_FOUND">
+      <SourceLine classname="org.gradle.Utilisateur" start="12" end="52" sourcefile="Utilisateur.java" sourcepath="org/gradle/Utilisateur.java"/>
+    </Type>
+    <Type descriptor="Lorg/gradle/Professeur;" role="TYPE_EXPECTED">
+      <SourceLine classname="org.gradle.Professeur" start="12" end="37" sourcefile="Professeur.java" sourcepath="org/gradle/Professeur.java"/>
+    </Type>
+    <Field classname="org.gradle.Editer" name="u" signature="Lorg/gradle/Utilisateur;" isStatic="false" role="FIELD_VALUE_OF">
+      <SourceLine classname="org.gradle.Editer" sourcefile="Editer.java" sourcepath="org/gradle/Editer.java"/>
+    </Field>
+    <SourceLine classname="org.gradle.Editer" start="83" end="83" startBytecode="475" endBytecode="475" sourcefile="Editer.java" sourcepath="org/gradle/Editer.java"/>
+    <SourceLine classname="org.gradle.Editer" start="127" end="127" startBytecode="787" endBytecode="787" sourcefile="Editer.java" sourcepath="org/gradle/Editer.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="org.gradle.Editer" start="128" end="128" startBytecode="815" endBytecode="815" sourcefile="Editer.java" sourcepath="org/gradle/Editer.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="org.gradle.Editer" start="37" end="37" startBytecode="115" endBytecode="115" sourcefile="Editer.java" sourcepath="org/gradle/Editer.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="org.gradle.Editer" start="129" end="129" startBytecode="852" endBytecode="852" sourcefile="Editer.java" sourcepath="org/gradle/Editer.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="org.gradle.Editer" start="74" end="74" startBytecode="379" endBytecode="379" sourcefile="Editer.java" sourcepath="org/gradle/Editer.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="org.gradle.Editer" start="130" end="130" startBytecode="889" endBytecode="889" sourcefile="Editer.java" sourcepath="org/gradle/Editer.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.gradle.Editer">
+      <SourceLine classname="org.gradle.Editer" start="12" end="131" sourcefile="Editer.java" sourcepath="org/gradle/Editer.java"/>
+    </Class>
+    <Method classname="org.gradle.Editer" name="agir" signature="()V" isStatic="false">
+      <SourceLine classname="org.gradle.Editer" start="26" end="131" startBytecode="0" endBytecode="1419" sourcefile="Editer.java" sourcepath="org/gradle/Editer.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner" start="608" end="609" startBytecode="0" endBytecode="71" sourcefile="Scanner.java" sourcepath="java/util/Scanner.java"/>
+    </Method>
+    <SourceLine classname="org.gradle.Editer" start="27" end="27" startBytecode="15" endBytecode="15" sourcefile="Editer.java" sourcepath="org/gradle/Editer.java"/>
+  </BugInstance>
+  <BugInstance type="EQ_COMPARETO_USE_OBJECT_EQUALS" priority="2" rank="16" abbrev="Eq" category="BAD_PRACTICE">
+    <Class classname="org.gradle.Etudiant">
+      <SourceLine classname="org.gradle.Etudiant" start="17" end="72" sourcefile="Etudiant.java" sourcepath="org/gradle/Etudiant.java"/>
+    </Class>
+    <Method classname="org.gradle.Etudiant" name="compareTo" signature="(Ljava/lang/Object;)I" isStatic="false">
+      <SourceLine classname="org.gradle.Etudiant" start="44" end="48" startBytecode="0" endBytecode="136" sourcefile="Etudiant.java" sourcepath="org/gradle/Etudiant.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.gradle.Groupe">
+      <SourceLine classname="org.gradle.Groupe" start="20" end="189" sourcefile="Groupe.java" sourcepath="org/gradle/Groupe.java"/>
+    </Class>
+    <Method classname="org.gradle.Groupe" name="choixUtilisateur" signature="()V" isStatic="false">
+      <SourceLine classname="org.gradle.Groupe" start="115" end="135" startBytecode="0" endBytecode="347" sourcefile="Groupe.java" sourcepath="org/gradle/Groupe.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner" start="608" end="609" startBytecode="0" endBytecode="71" sourcefile="Scanner.java" sourcepath="java/util/Scanner.java"/>
+    </Method>
+    <SourceLine classname="org.gradle.Groupe" start="115" end="115" startBytecode="7" endBytecode="7" sourcefile="Groupe.java" sourcepath="org/gradle/Groupe.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.gradle.Groupe">
+      <SourceLine classname="org.gradle.Groupe" start="20" end="189" sourcefile="Groupe.java" sourcepath="org/gradle/Groupe.java"/>
+    </Class>
+    <Method classname="org.gradle.Groupe" name="init" signature="()V" isStatic="false">
+      <SourceLine classname="org.gradle.Groupe" start="44" end="60" startBytecode="0" endBytecode="262" sourcefile="Groupe.java" sourcepath="org/gradle/Groupe.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner" start="608" end="609" startBytecode="0" endBytecode="71" sourcefile="Scanner.java" sourcepath="java/util/Scanner.java"/>
+    </Method>
+    <SourceLine classname="org.gradle.Groupe" start="44" end="44" startBytecode="7" endBytecode="7" sourcefile="Groupe.java" sourcepath="org/gradle/Groupe.java"/>
+  </BugInstance>
+  <BugInstance type="IP_PARAMETER_IS_DEAD_BUT_OVERWRITTEN" priority="2" rank="8" abbrev="IP" category="CORRECTNESS">
+    <Class classname="org.gradle.Groupe">
+      <SourceLine classname="org.gradle.Groupe" start="20" end="189" sourcefile="Groupe.java" sourcepath="org/gradle/Groupe.java"/>
+    </Class>
+    <Method classname="org.gradle.Groupe" name="&lt;init&gt;" signature="(I)V" isStatic="false">
+      <SourceLine classname="org.gradle.Groupe" start="20" end="26" startBytecode="0" endBytecode="18" sourcefile="Groupe.java" sourcepath="org/gradle/Groupe.java"/>
+    </Method>
+    <LocalVariable name="a" register="1" pc="6" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.gradle.Groupe" start="21" end="21" startBytecode="5" endBytecode="5" sourcefile="Groupe.java" sourcepath="org/gradle/Groupe.java"/>
+  </BugInstance>
+  <BugInstance type="NM_FIELD_NAMING_CONVENTION" priority="3" rank="19" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.gradle.Note">
+      <SourceLine classname="org.gradle.Note" start="8" end="34" sourcefile="Note.java" sourcepath="org/gradle/Note.java"/>
+    </Class>
+    <Field classname="org.gradle.Note" name="Commentaire" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.gradle.Note" sourcefile="Note.java" sourcepath="org/gradle/Note.java"/>
+    </Field>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sat, 10 Jan 2015 00:20:12 +0100" total_classes="8" referenced_classes="27" total_bugs="8" total_size="318" num_packages="1" java_version="1.7.0_65" vm_version="24.65-b04" cpu_seconds="15.15" clock_seconds="5.44" peak_mbytes="108.97" alloc_mbytes="853.50" gc_seconds="0.04" priority_3="3" priority_2="2" priority_1="3">
+    <PackageStats package="org.gradle" total_bugs="8" total_types="8" total_size="318" priority_3="3" priority_2="2" priority_1="3">
+      <ClassStats class="org.gradle.Action" sourceFile="Action.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.gradle.Consulter" sourceFile="Consulter.java" interface="false" size="16" bugs="1" priority_3="1"/>
+      <ClassStats class="org.gradle.Editer" sourceFile="Editer.java" interface="false" size="70" bugs="2" priority_3="1" priority_1="1"/>
+      <ClassStats class="org.gradle.Etudiant" sourceFile="Etudiant.java" interface="false" size="42" bugs="1" priority_2="1"/>
+      <ClassStats class="org.gradle.Groupe" sourceFile="Groupe.java" interface="false" size="112" bugs="3" priority_2="1" priority_1="2"/>
+      <ClassStats class="org.gradle.Note" sourceFile="Note.java" interface="false" size="22" bugs="1" priority_3="1"/>
+      <ClassStats class="org.gradle.Professeur" sourceFile="Professeur.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.gradle.Utilisateur" sourceFile="Utilisateur.java" interface="false" size="32" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="641" invocations="402" avgMicrosecondsPerInvocation="1594" maxMicrosecondsPerInvocation="30609" standardDeviationMircosecondsPerInvocation="3446"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.StreamResourceTracker" totalMilliseconds="478" invocations="33" avgMicrosecondsPerInvocation="14507" maxMicrosecondsPerInvocation="25664" standardDeviationMircosecondsPerInvocation="8453"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="344" invocations="66" avgMicrosecondsPerInvocation="5225" maxMicrosecondsPerInvocation="95289" standardDeviationMircosecondsPerInvocation="15520"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="284" invocations="60" avgMicrosecondsPerInvocation="4739" maxMicrosecondsPerInvocation="143529" standardDeviationMircosecondsPerInvocation="18574"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="275" invocations="27" avgMicrosecondsPerInvocation="10216" maxMicrosecondsPerInvocation="59159" standardDeviationMircosecondsPerInvocation="15261"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="240" invocations="159" avgMicrosecondsPerInvocation="1514" maxMicrosecondsPerInvocation="12364" standardDeviationMircosecondsPerInvocation="1844"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="217" invocations="60" avgMicrosecondsPerInvocation="3631" maxMicrosecondsPerInvocation="77320" standardDeviationMircosecondsPerInvocation="11425"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="208" invocations="60" avgMicrosecondsPerInvocation="3478" maxMicrosecondsPerInvocation="84248" standardDeviationMircosecondsPerInvocation="11126"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="149" invocations="60" avgMicrosecondsPerInvocation="2494" maxMicrosecondsPerInvocation="40906" standardDeviationMircosecondsPerInvocation="5668"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="118" invocations="371" avgMicrosecondsPerInvocation="320" maxMicrosecondsPerInvocation="4284" standardDeviationMircosecondsPerInvocation="612"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="113" invocations="60" avgMicrosecondsPerInvocation="1887" maxMicrosecondsPerInvocation="32843" standardDeviationMircosecondsPerInvocation="4497"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="97" invocations="27" avgMicrosecondsPerInvocation="3619" maxMicrosecondsPerInvocation="21105" standardDeviationMircosecondsPerInvocation="4932"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="84" invocations="61" avgMicrosecondsPerInvocation="1377" maxMicrosecondsPerInvocation="67061" standardDeviationMircosecondsPerInvocation="8495"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="80" invocations="27" avgMicrosecondsPerInvocation="2999" maxMicrosecondsPerInvocation="42652" standardDeviationMircosecondsPerInvocation="10576"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="80" invocations="27" avgMicrosecondsPerInvocation="2983" maxMicrosecondsPerInvocation="15058" standardDeviationMircosecondsPerInvocation="4235"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="77" invocations="30" avgMicrosecondsPerInvocation="2588" maxMicrosecondsPerInvocation="25841" standardDeviationMircosecondsPerInvocation="4668"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="72" invocations="27" avgMicrosecondsPerInvocation="2667" maxMicrosecondsPerInvocation="13478" standardDeviationMircosecondsPerInvocation="3899"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="69" invocations="34" avgMicrosecondsPerInvocation="2035" maxMicrosecondsPerInvocation="19900" standardDeviationMircosecondsPerInvocation="4027"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

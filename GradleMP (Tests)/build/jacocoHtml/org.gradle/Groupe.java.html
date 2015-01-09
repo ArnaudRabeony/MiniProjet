@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Groupe.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GradleMP</a> &gt; <a href="index.source.html" class="el_package">org.gradle</a> &gt; <span class="el_source">Groupe.java</span></div><h1>Groupe.java</h1><pre class="source lang-java linenums">package org.gradle;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+
+/*
+ * NOUVEAU
+ */
+
+public class Groupe{
+
+	private Professeur prof;
+	private ArrayList&lt;Etudiant&gt; eleves;
+	private int moyenne;
+	private int max;
+	private int min;
+		
+	public Groupe(int a)//création d'un groupe vide : int a est là juste pour différencier avec le constr par def
+<span class="fc" id="L20">	{</span>
+<span class="fc" id="L21">		a=0;</span>
+<span class="fc" id="L22">		this.setMax(0);</span>
+<span class="fc" id="L23">		this.setMin(20);</span>
+<span class="fc" id="L24">		this.setMoyenne(0);</span>
+<span class="fc" id="L25">		this.eleves=new ArrayList&lt;Etudiant&gt;();</span>
+<span class="fc" id="L26">	}</span>
+	
+	public Groupe()
+<span class="fc" id="L29">	{		</span>
+<span class="fc" id="L30">		this.init();</span>
+<span class="fc" id="L31">		this.setMax(0);</span>
+<span class="fc" id="L32">		this.setMin(20);</span>
+<span class="fc" id="L33">		this.setMoyenne(0);</span>
+<span class="fc" id="L34">	}</span>
+
+	public Groupe(Professeur prof)
+	{
+<span class="fc" id="L38">		this();</span>
+<span class="fc" id="L39">		this.prof=prof;</span>
+<span class="fc" id="L40">	}</span>
+	
+	public void init()
+	{
+<span class="fc" id="L44">		Scanner sc = new Scanner(System.in);</span>
+
+<span class="fc" id="L46">		System.out.print(&quot;\n\n* * * * * * * * * * * * * * *  Cr�ation de la classe  * * * * * * * * * * * * * * *\n\n&quot;);</span>
+		
+<span class="fc" id="L48">		this.eleves=new ArrayList&lt;Etudiant&gt;();</span>
+<span class="fc" id="L49">		Etudiant e=new Etudiant(&quot;Night&quot;,&quot;Yass&quot;);</span>
+<span class="fc" id="L50">		Etudiant e2=new Etudiant(&quot;Wabe&quot;,&quot;Awno&quot;);</span>
+<span class="fc" id="L51">		Etudiant e3=new Etudiant(&quot;Ouille&quot;,&quot;AieAie&quot;);</span>
+<span class="fc" id="L52">		Etudiant e4=new Etudiant(&quot;GhostFamily&quot;,&quot;Phantom&quot;);</span>
+		
+<span class="fc" id="L54">		this.eleves.add(e);</span>
+<span class="fc" id="L55">		this.eleves.add(e2);</span>
+<span class="fc" id="L56">		this.eleves.add(e3);</span>
+<span class="fc" id="L57">		this.eleves.add(e4);</span>
+		//this.creerClasse(nbEtud);
+<span class="fc" id="L59">		sc.close();</span>
+<span class="fc" id="L60">	}</span>
+	
+	@Override
+	public String toString() {
+<span class="nc" id="L64">		return &quot;Groupe [prof=&quot; + prof + &quot;, eleves=&quot; + eleves + &quot;, moyenne=&quot;</span>
+				+ moyenne + &quot;, max=&quot; + max + &quot;, min=&quot; + min + &quot;]&quot;;
+	}
+
+	public Groupe(Professeur p, ArrayList&lt;Etudiant&gt; e)
+<span class="nc" id="L69">	{</span>
+<span class="nc" id="L70">		this.setEleves(e);</span>
+<span class="nc" id="L71">		this.setProf(p);</span>
+<span class="nc" id="L72">		this.setMax(0);</span>
+<span class="nc" id="L73">		this.setMin(20);</span>
+<span class="nc" id="L74">		this.setMoyenne(0);</span>
+<span class="nc" id="L75">	}</span>
+	
+	/*public void creerClasse(int n)
+	{
+		int i;
+		
+		for(i=0;i&lt;n;i++)
+		{
+			String nom=new String(&quot;Nom&quot;+i+1);
+			String pr=new String(&quot;Prenom&quot;+i+1);
+			this.getEleves().add(new Etudiant(nom, pr));
+		}
+	*/
+	
+	public int getMoyenne() {
+<span class="fc" id="L90">		return moyenne;</span>
+	}
+
+	public void setMoyenne(int moyenne) {
+<span class="fc" id="L94">		this.moyenne = moyenne;</span>
+<span class="fc" id="L95">	}</span>
+
+	public int getMax() {
+<span class="fc" id="L98">		return max;</span>
+	}
+
+	public void setMax(int max) {
+<span class="fc" id="L102">		this.max = max;</span>
+<span class="fc" id="L103">	}</span>
+
+	public int getMin() {
+<span class="fc" id="L106">		return min;</span>
+	}
+
+	public void setMin(int min) {
+<span class="fc" id="L110">		this.min = min;</span>
+<span class="fc" id="L111">	}	</span>
+		
+	public void choixUtilisateur()
+	{
+<span class="nc" id="L115">		Scanner sc = new Scanner(System.in);</span>
+
+<span class="nc" id="L117">		System.out.println(&quot;\n* * * * * * * * * * * * Connexion * * * * * * * * * * *\n\n&quot;);</span>
+<span class="nc" id="L118">		System.out.println(&quot;Saisir nom :&quot;);</span>
+<span class="nc" id="L119">		String nom = sc.nextLine();</span>
+<span class="nc" id="L120">		System.out.println(&quot;Saisir prenom :&quot;);</span>
+<span class="nc" id="L121">		String prenom = sc.nextLine();</span>
+		
+<span class="nc" id="L123">		ArrayList&lt;Utilisateur&gt; grpProf=new ArrayList&lt;Utilisateur&gt;(this.getEleves());</span>
+<span class="nc" id="L124">		grpProf.add(this.getProf());</span>
+
+<span class="nc bnc" id="L126" title="All 2 branches missed.">		for(Utilisateur u : grpProf)</span>
+		{
+<span class="nc bnc" id="L128" title="All 4 branches missed.">			if(nom.equals(u.getNom()) &amp;&amp; prenom.equals(u.getPrenom()))</span>
+			{
+<span class="nc" id="L130">				u.getAc().agir();</span>
+			}
+<span class="nc" id="L132">		}		</span>
+		
+<span class="nc" id="L134">		sc.close();</span>
+<span class="nc" id="L135">	}</span>
+	
+	public void statistiques()
+	{
+<span class="nc" id="L139">		this.moyenne();</span>
+<span class="nc" id="L140">		this.max();</span>
+<span class="nc" id="L141">		this.min();</span>
+<span class="nc" id="L142">	}</span>
+	
+	public int moyenne()
+	{
+<span class="fc bfc" id="L146" title="All 2 branches covered.">		for(Etudiant e : this.getEleves())</span>
+		{
+<span class="fc" id="L148">			this.setMoyenne(this.getMoyenne()+e.getNote().getValeur());</span>
+<span class="fc" id="L149">		}</span>
+		
+<span class="fc" id="L151">		this.setMoyenne(this.getMoyenne()/this.getEleves().size());</span>
+<span class="fc" id="L152">	return this.getMoyenne();</span>
+	}
+	
+	public int min()
+	{
+<span class="fc bfc" id="L157" title="All 2 branches covered.">		for(Etudiant e : this.getEleves())</span>
+		{
+<span class="pc bpc" id="L159" title="1 of 2 branches missed.">			if(e.getNote().getValeur()&lt;this.getMin())</span>
+<span class="fc" id="L160">				this.setMin(e.getNote().getValeur());</span>
+<span class="fc" id="L161">		}</span>
+<span class="fc" id="L162">		return this.getMin();</span>
+	}
+	
+	public int max()
+	{
+<span class="fc bfc" id="L167" title="All 2 branches covered.">		for(Etudiant e : this.getEleves())</span>
+		{
+<span class="fc bfc" id="L169" title="All 2 branches covered.">			if(e.getNote().getValeur()&gt;this.getMax())</span>
+<span class="fc" id="L170">				this.setMax(e.getNote().getValeur());</span>
+<span class="fc" id="L171">		}</span>
+<span class="fc" id="L172">		return this.getMax();</span>
+	}
+
+	public Professeur getProf() {
+<span class="nc" id="L176">		return prof;</span>
+	}
+
+	public void setProf(Professeur prof) {
+<span class="fc" id="L180">		this.prof = prof;</span>
+<span class="fc" id="L181">	}</span>
+
+	public ArrayList&lt;Etudiant&gt; getEleves() {
+<span class="fc" id="L184">		return eleves;</span>
+	}
+
+	public void setEleves(ArrayList&lt;Etudiant&gt; eleves) {
+<span class="nc" id="L188">		this.eleves = eleves;</span>
+<span class="nc" id="L189">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>
